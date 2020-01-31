@@ -10,6 +10,15 @@ public class StringCalculatorShould {
         assertEquals("0",stringCalculator.add(""));
 
     }
+
+    @Test
+    public void return_one_when_string_have_one(){
+
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals("1",stringCalculator.add("1"));
+
+    }
+
     @Test
     public void return_two_when_string_have_two_ones(){
 
@@ -25,5 +34,15 @@ public class StringCalculatorShould {
         assertEquals("3",stringCalculator.add("1,2"));
 
     }
+
+    @Test
+    public void return_four_when_string_have_one_and_three(){
+
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals("4",stringCalculator.add("1,3"));
+
+    }
+
+
 
 }
