@@ -1,4 +1,6 @@
-    public class StringCalculator {
+import java.text.DecimalFormat;
+
+public class StringCalculator {
         public String add (String numbers) {
             if (numbers == "") {
                 return "0";
@@ -7,10 +9,11 @@
                 return numbers;
             }
             String[] numberList = numbers.split(",");
-            int result = 0;
+            float result = 0;
             for (String element : numberList) {
-                result += Integer.parseInt(element);
+                result += Float.parseFloat(element);
             }
-            return String.valueOf(result);
+            DecimalFormat format = new DecimalFormat("0.#");
+            return format.format(result).replace(',','.');
         }
     }

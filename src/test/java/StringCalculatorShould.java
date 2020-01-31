@@ -43,6 +43,12 @@ public class StringCalculatorShould {
 
     }
 
+    @Test
+    public void return_result_when_string_have_floats_numbers(){
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals("2.1",stringCalculator.add("1,1.1"));
+    }
+
 
 
 }
