@@ -18,4 +18,12 @@ public class StringCalculatorShould {
 
     }
 
+    @Test
+    public void return_three_when_string_have_one_and_two(){
+
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals("3",stringCalculator.add("1,2"));
+
+    }
+
 }
