@@ -10,11 +10,17 @@ public class StringCalculator {
             if (!numbers.contains(",") && !numbers.contains("\n")) {
                 return numbers;
             }
+
+            if(numbers.charAt(numbers.length()-1) == ','){
+                return "Number expected but EOF found.";
+            }
+
             if(numbers.indexOf(",\n") != -1){
 
                 return "Number expected but '\\n' found at position " + numbers.indexOf("\n") + ".";
             }
             String[] numberList = numbers.split(",|\\n");
+
             float result = 0;
             for (String element : numberList) {
                 result += Float.parseFloat(element);

@@ -68,13 +68,18 @@ public class StringCalculatorShould {
     @Test
     public void return_result_when_string_have_enter_and_comma(){
         StringCalculator stringCalculator = new StringCalculator();
-        assertEquals("6",stringCalculator.add("1\n2,3"));
+        assertEquals("6", stringCalculator.add("1\n2,3"));
     }
 
     @Test
     public void return_error_message_when_string_have_two_separators_together(){
         StringCalculator stringCalculator = new StringCalculator();
-        assertEquals("Number expected but '\\n' found at position 6.",stringCalculator.add("175.2,\n35"));
+        assertEquals("Number expected but '\\n' found at position 6.", stringCalculator.add("175.2,\n35"));
+    }
+    @Test
+    public void return_error_message_when_last_character_is_not_number(){
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals("Number expected but EOF found.", stringCalculator.add("1,3,"));
     }
 
 
