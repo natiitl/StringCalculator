@@ -81,6 +81,10 @@ public class StringCalculatorShould {
         assertEquals("6", stringCalculator.add("//|\n1|2|3"));
     }
 
+    @Test
+    public void return_result_when_separator_have_multiple_characters(){
+        assertEquals("6", stringCalculator.add("//sep\n1sep2sep3"));
+    }
 
 
 

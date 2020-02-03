@@ -21,7 +21,10 @@ public class StringCalculator {
             if(numbers.indexOf(",\n") != -1){
                 return "Number expected but '\\n' found at position " + numbers.indexOf("\n") + ".";
             }
-            String[] numberList = numbers.split("\\" + separator + "|\\n");
+            if(separator.equals("|")){
+                separator = "\\" + separator ;
+            }
+            String[] numberList = numbers.split(separator + "|\\n");
             return addOperation(numberList);
         }
 
