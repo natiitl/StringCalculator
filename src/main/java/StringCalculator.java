@@ -12,22 +12,16 @@ public class StringCalculator {
                 separator = numbers.substring(2,numbers.indexOf("\n"));
                 numbers = numbers.substring(numbers.indexOf("\n") + 1);
             }
-
             if (!numbers.contains(separator) && !numbers.contains("\n")) {
                 return numbers;
             }
-
             if(numbers.charAt(numbers.length()-1) == ','){
                 return "Number expected but EOF found.";
             }
-
             if(numbers.indexOf(",\n") != -1){
-
                 return "Number expected but '\\n' found at position " + numbers.indexOf("\n") + ".";
             }
-
             String[] numberList = numbers.split("\\" + separator + "|\\n");
-
             float result = 0;
             for (String element : numberList) {
                 result += Float.parseFloat(element);
