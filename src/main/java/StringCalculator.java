@@ -9,8 +9,12 @@ public class StringCalculator {
                 return "0";
             }
             if(numbers.startsWith("//")){
+
                 separator = numbers.substring(2,numbers.indexOf("\n"));
                 numbers = numbers.substring(numbers.indexOf("\n") + 1);
+                if(numbers.contains(",")){
+                    return "'" + separator + "' expected but ',' found at position " + numbers.indexOf(",") + ".";
+                }
             }
             if (!numbers.contains(separator) && !numbers.contains("\n")) {
                 return numbers;

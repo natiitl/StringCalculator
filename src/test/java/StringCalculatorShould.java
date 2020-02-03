@@ -86,6 +86,11 @@ public class StringCalculatorShould {
         assertEquals("6", stringCalculator.add("//sep\n1sep2sep3"));
     }
 
+    @Test
+    public void return_error_when_there_are_different_separators(){
+        assertEquals("'|' expected but ',' found at position 3.",stringCalculator.add("//|\n1|2,3"));
+    }
+
 
 
 
