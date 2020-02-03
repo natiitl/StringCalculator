@@ -54,7 +54,16 @@ public class StringCalculatorShould {
         assertEquals("2.21",stringCalculator.add("1.11,1.1"));
     }
 
-
+    @Test
+    public void return_result_when_string_have_three_numbers(){
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals("3",stringCalculator.add("1,1,1"));
+    }
+    @Test
+    public void return_result_when_string_have_many_numbers(){
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals("75.31",stringCalculator.add("1,1.1,1,1.11,70,1.1"));
+    }
 
 
 }
