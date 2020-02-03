@@ -11,8 +11,6 @@ public class StringCalculator {
             if(numbers.startsWith("//")){
                 separator = numbers.substring(2,numbers.indexOf("\n"));
                 numbers = numbers.substring(numbers.indexOf("\n") + 1);
-
-
             }
 
             if (!numbers.contains(separator) && !numbers.contains("\n")) {
@@ -28,7 +26,7 @@ public class StringCalculator {
                 return "Number expected but '\\n' found at position " + numbers.indexOf("\n") + ".";
             }
 
-            String[] numberList = numbers.split(separator + "|\\n");
+            String[] numberList = numbers.split("\\" + separator + "|\\n");
 
             float result = 0;
             for (String element : numberList) {

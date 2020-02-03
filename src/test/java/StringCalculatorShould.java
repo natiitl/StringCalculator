@@ -86,7 +86,11 @@ public class StringCalculatorShould {
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals( "3" , stringCalculator.add("//;\n1;2"));
     }
-
+    @Test
+    public void return_result_when_separator_is_pipe(){
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals("6", stringCalculator.add("//|\n1|2|3"));
+    }
 
 
 
