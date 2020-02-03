@@ -22,11 +22,15 @@ public class StringCalculator {
                 return "Number expected but '\\n' found at position " + numbers.indexOf("\n") + ".";
             }
             String[] numberList = numbers.split("\\" + separator + "|\\n");
-            float result = 0;
-            for (String element : numberList) {
-                result += Float.parseFloat(element);
-            }
-            DecimalFormat format = new DecimalFormat("0.##");
-            return format.format(result).replace(',','.');
+            return addOperation(numberList);
         }
+
+    private String addOperation(String[] numberList) {
+        float result = 0;
+        for (String element : numberList) {
+            result += Float.parseFloat(element);
+        }
+        DecimalFormat format = new DecimalFormat("0.##");
+        return format.format(result).replace(',','.');
     }
+}
