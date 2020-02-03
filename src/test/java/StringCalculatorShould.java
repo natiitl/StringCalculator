@@ -65,5 +65,13 @@ public class StringCalculatorShould {
         assertEquals("75.31",stringCalculator.add("1,1.1,1,1.11,70,1.1"));
     }
 
+    @Test
+    public void return_result_when_string_have_enter_and_comma(){
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals("6",stringCalculator.add("1\n2,3"));
+    }
+
+
+
 
 }

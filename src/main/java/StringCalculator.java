@@ -5,10 +5,10 @@ public class StringCalculator {
             if (numbers == "") {
                 return "0";
             }
-            if (!numbers.contains(",")) {
+            if (!numbers.contains(",") && !numbers.contains("\n")) {
                 return numbers;
             }
-            String[] numberList = numbers.split(",");
+            String[] numberList = numbers.split(",|\\n");
             float result = 0;
             for (String element : numberList) {
                 result += Float.parseFloat(element);
