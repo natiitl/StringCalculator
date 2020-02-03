@@ -44,10 +44,16 @@ public class StringCalculatorShould {
     }
 
     @Test
-    public void return_result_when_string_have_floats_numbers(){
+    public void return_result_when_string_have_one_float_number(){
         StringCalculator stringCalculator = new StringCalculator();
         assertEquals("2.1",stringCalculator.add("1,1.1"));
     }
+    @Test
+    public void return_result_when_string_have_two_float_numbers(){
+        StringCalculator stringCalculator = new StringCalculator();
+        assertEquals("2.21",stringCalculator.add("1.11,1.1"));
+    }
+
 
 
 

@@ -13,7 +13,7 @@ public class StringCalculator {
             for (String element : numberList) {
                 result += Float.parseFloat(element);
             }
-            DecimalFormat format = new DecimalFormat("0.#");
+            DecimalFormat format = new DecimalFormat("0.##");
             return format.format(result).replace(',','.');
         }
     }
