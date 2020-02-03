@@ -3,11 +3,19 @@ import java.text.DecimalFormat;
 public class StringCalculator {
         public String add (String numbers) {
 
+            String separator = ",";
+
             if (numbers == "") {
                 return "0";
             }
+            if(numbers.startsWith("//")){
+                separator = numbers.substring(2,numbers.indexOf("\n"));
+                numbers = numbers.substring(numbers.indexOf("\n") + 1);
 
-            if (!numbers.contains(",") && !numbers.contains("\n")) {
+
+            }
+
+            if (!numbers.contains(separator) && !numbers.contains("\n")) {
                 return numbers;
             }
 
@@ -19,7 +27,8 @@ public class StringCalculator {
 
                 return "Number expected but '\\n' found at position " + numbers.indexOf("\n") + ".";
             }
-            String[] numberList = numbers.split(",|\\n");
+
+            String[] numberList = numbers.split(separator + "|\\n");
 
             float result = 0;
             for (String element : numberList) {
